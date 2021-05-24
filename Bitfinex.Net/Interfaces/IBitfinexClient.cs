@@ -986,7 +986,7 @@ namespace Bitfinex.Net.Interfaces
         /// <param name="amount">The amount to transfer</param>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
-        WebCallResult<BitfinexTransferResult> WalletTransfer(string currency, decimal amount, WithdrawWallet fromWallet, WithdrawWallet toWallet, CancellationToken ct = default);
+        WebCallResult<BitfinexTransferResult> WalletTransfer(string currency, decimal amount, WalletType fromWallet, WalletType toWallet, CancellationToken ct = default);
 
         /// <summary>
         /// Transfers funds from one wallet to another
@@ -997,7 +997,7 @@ namespace Bitfinex.Net.Interfaces
         /// <param name="amount">The amount to transfer</param>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
-        Task<WebCallResult<BitfinexTransferResult>> WalletTransferAsync(string currency, decimal amount, WithdrawWallet fromWallet, WithdrawWallet toWallet, CancellationToken ct = default);
+        Task<WebCallResult<BitfinexTransferResult>> WalletTransferAsync(string currency, decimal amount, WalletType fromWallet, WalletType toWallet, CancellationToken ct = default);
 
         /// <summary>
         /// Withdraw funds from Bitfinex, either to a crypto currency address or a bank account

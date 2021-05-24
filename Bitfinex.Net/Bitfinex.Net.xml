@@ -977,7 +977,7 @@
             <param name="ct">Cancellation token</param>
             <returns></returns>
         </member>
-        <member name="M:Bitfinex.Net.BitfinexClient.WalletTransfer(System.String,System.Decimal,Bitfinex.Net.Objects.WithdrawWallet,Bitfinex.Net.Objects.WithdrawWallet,System.Threading.CancellationToken)">
+        <member name="M:Bitfinex.Net.BitfinexClient.WalletTransfer(System.String,System.Decimal,Bitfinex.Net.Objects.WalletType,Bitfinex.Net.Objects.WalletType,System.Threading.CancellationToken)">
             <summary>
             Transfers funds from one wallet to another
             </summary>
@@ -988,7 +988,7 @@
             <param name="ct">Cancellation token</param>
             <returns></returns>
         </member>
-        <member name="M:Bitfinex.Net.BitfinexClient.WalletTransferAsync(System.String,System.Decimal,Bitfinex.Net.Objects.WithdrawWallet,Bitfinex.Net.Objects.WithdrawWallet,System.Threading.CancellationToken)">
+        <member name="M:Bitfinex.Net.BitfinexClient.WalletTransferAsync(System.String,System.Decimal,Bitfinex.Net.Objects.WalletType,Bitfinex.Net.Objects.WalletType,System.Threading.CancellationToken)">
             <summary>
             Transfers funds from one wallet to another
             </summary>
@@ -2473,7 +2473,7 @@
             <param name="ct">Cancellation token</param>
             <returns></returns>
         </member>
-        <member name="M:Bitfinex.Net.Interfaces.IBitfinexClient.WalletTransfer(System.String,System.Decimal,Bitfinex.Net.Objects.WithdrawWallet,Bitfinex.Net.Objects.WithdrawWallet,System.Threading.CancellationToken)">
+        <member name="M:Bitfinex.Net.Interfaces.IBitfinexClient.WalletTransfer(System.String,System.Decimal,Bitfinex.Net.Objects.WalletType,Bitfinex.Net.Objects.WalletType,System.Threading.CancellationToken)">
             <summary>
             Transfers funds from one wallet to another
             </summary>
@@ -2484,7 +2484,7 @@
             <param name="ct">Cancellation token</param>
             <returns></returns>
         </member>
-        <member name="M:Bitfinex.Net.Interfaces.IBitfinexClient.WalletTransferAsync(System.String,System.Decimal,Bitfinex.Net.Objects.WithdrawWallet,Bitfinex.Net.Objects.WithdrawWallet,System.Threading.CancellationToken)">
+        <member name="M:Bitfinex.Net.Interfaces.IBitfinexClient.WalletTransferAsync(System.String,System.Decimal,Bitfinex.Net.Objects.WalletType,Bitfinex.Net.Objects.WalletType,System.Threading.CancellationToken)">
             <summary>
             Transfers funds from one wallet to another
             </summary>

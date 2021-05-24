@@ -1611,7 +1611,7 @@ namespace Bitfinex.Net
         /// <param name="amount">The amount to transfer</param>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
-        public WebCallResult<BitfinexTransferResult> WalletTransfer(string currency, decimal amount, WithdrawWallet fromWallet, WithdrawWallet toWallet, CancellationToken ct = default) => WalletTransferAsync(currency, amount, fromWallet, toWallet, ct).Result;
+        public WebCallResult<BitfinexTransferResult> WalletTransfer(string currency, decimal amount, WalletType fromWallet, WalletType toWallet, CancellationToken ct = default) => WalletTransferAsync(currency, amount, fromWallet, toWallet, ct).Result;
 
         /// <summary>
         /// Transfers funds from one wallet to another
@@ -1622,15 +1622,15 @@ namespace Bitfinex.Net
         /// <param name="amount">The amount to transfer</param>
         /// <param name="ct">Cancellation token</param>
         /// <returns></returns>
-        public async Task<WebCallResult<BitfinexTransferResult>> WalletTransferAsync(string currency, decimal amount, WithdrawWallet fromWallet, WithdrawWallet toWallet, CancellationToken ct = default)
+        public async Task<WebCallResult<BitfinexTransferResult>> WalletTransferAsync(string currency, decimal amount, WalletType fromWallet, WalletType toWallet, CancellationToken ct = default)
         {
             currency.ValidateNotNull(nameof(currency));
             var parameters = new Dictionary<string, object>
             {
                 { "currency", currency },
-                { "amount", amount },
-                { "walletfrom", JsonConvert.SerializeObject(fromWallet, new WithdrawWalletConverter(false)) },
-                { "walletto", JsonConvert.SerializeObject(toWallet, new WithdrawWalletConverter(false)) },
+                { "amount", amount.ToString(new CultureInfo("en-US")) },
+                { "walletfrom", JsonConvert.SerializeObject(fromWallet, new WalletTypeConverter(false)) },
+                { "walletto", JsonConvert.SerializeObject(toWallet, new WalletTypeConverter(false)) },
             };
             return await SendRequest<BitfinexTransferResult>(GetUrl(TransferEndpoint, ApiVersion1), HttpMethod.Post, ct, parameters, true).ConfigureAwait(false);
         }
